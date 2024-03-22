@@ -22,6 +22,6 @@ public class CommonUtils {
         return scanner.nextLine();
     }
     public static DateTimeFormatter getDateTimeFormatter(){
-        return DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
+        return DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     }
 }

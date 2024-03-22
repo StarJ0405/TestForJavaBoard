@@ -45,6 +45,7 @@ public class ArticleController {
             articleView.cantFindByIdMessage();
             return;
         }
+        articleRepository.addView(article);
         articleView.detailMessage(article);
     }
 

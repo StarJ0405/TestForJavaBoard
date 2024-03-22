@@ -1,5 +1,7 @@
 package com.StarJ.Articles;
 
+import com.StarJ.CommonUtils;
+
 import java.util.List;
 
 public class ArticleView {
@@ -39,6 +41,8 @@ public class ArticleView {
         System.out.println("번호 : " + article.getId());
         System.out.println("제목 : " + article.getTitle());
         System.out.println("내용 : " + article.getBody());
+        System.out.println("등록날짜 : " + article.getDate().format(CommonUtils.getDateTimeFormatter()));
+        System.out.println("조회수 : " + article.getView());
         System.out.println("===================");
     }
 
