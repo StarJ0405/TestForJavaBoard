@@ -1,12 +1,14 @@
 package com.StarJ.Articles;
 
+import com.StarJ.Comments.Comment;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleRepository {
     private int totalId = 0;
-    private List<Article> list = new ArrayList<>();
+    private final List<Article> list = new ArrayList<>();
 
     public ArticleRepository() {
         intialData();
@@ -56,4 +58,13 @@ public class ArticleRepository {
         return list;
     }
 
+    public void addComment(Article article, Comment comment) {
+        List<Comment> comments = article.getComments();
+        comments.add(comment);
+        article.setComments(comments);
+    }
+
+    public List<Comment> getComments(Article article) {
+        return article.getComments();
+    }
 }

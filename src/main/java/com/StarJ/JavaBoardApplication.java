@@ -2,7 +2,7 @@ package com.StarJ;
 
 public class JavaBoardApplication {
     private static boolean runStatus = false;
-    private JavaBoardController javaBoardController = new JavaBoardController();
+    private JavaBoardController javaBoardController = JavaBoardController.JAVA_BOARD_CONTROLLER;
 
 
     public void run() {
@@ -17,6 +17,8 @@ public class JavaBoardApplication {
                 case "delete" -> javaBoardController.delete();
                 case "detail" -> javaBoardController.detail();
                 case "search" -> javaBoardController.search();
+                case "signup" -> javaBoardController.signup();
+                case "login" -> javaBoardController.login();
                 default -> System.out.println("없는 명령어 입니다.");
             }
         }

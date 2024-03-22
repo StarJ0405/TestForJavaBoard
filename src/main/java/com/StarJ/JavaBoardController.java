@@ -1,9 +1,15 @@
 package com.StarJ;
 
 import com.StarJ.Articles.ArticleController;
+import com.StarJ.Members.MemberController;
 
 public class JavaBoardController {
-    private final ArticleController articleController = new ArticleController();
+    public static final JavaBoardController JAVA_BOARD_CONTROLLER = new JavaBoardController();
+    private final ArticleController articleController = ArticleController.ARTICLE_CONTROLLER;
+    private final MemberController memberController = MemberController.MEMBER_CONTROLLER;
+
+    private JavaBoardController() {
+    }
 
     public void exit() {
         System.out.println("프로그램을 종료합니다.");
@@ -44,5 +50,18 @@ public class JavaBoardController {
     public void search() {
         String keyword = CommonUtils.getInputString("검색 키워드를 입력해주세요 : ");
         articleController.search(keyword);
+    }
+
+    public void signup() {
+        String id = CommonUtils.getInputString("아이디를 입력해주세요 : ");
+        String password = CommonUtils.getInputString("비밀번호를 입력해주세요 : ");
+        String nickname = CommonUtils.getInputString("닉네임을 입력해주세요 : ");
+        memberController.add(id, password, nickname);
+    }
+
+    public void login() {
+        String id = CommonUtils.getInputString("아이디 : ");
+        String password = CommonUtils.getInputString("비밀번호 : ");
+        memberController.login(id, password);
     }
 }

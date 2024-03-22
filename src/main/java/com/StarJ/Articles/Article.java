@@ -1,6 +1,10 @@
 package com.StarJ.Articles;
 
+import com.StarJ.Comments.Comment;
+
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Article {
     private final int id;
@@ -8,13 +12,14 @@ public class Article {
     private String body;
     private final LocalDateTime date;
     private int view;
-
+    private List<Comment> comments;
     public Article(int id, String title, String body, LocalDateTime date, int view) {
         this.id = id;
         this.title = title;
         this.body = body;
         this.date = date;
         this.view = view;
+        this.comments= new ArrayList<>();
     }
 
     public int getId() {
@@ -47,5 +52,13 @@ public class Article {
 
     public void setView(int view) {
         this.view = view;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }

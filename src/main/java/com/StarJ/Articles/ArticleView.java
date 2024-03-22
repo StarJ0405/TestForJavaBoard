@@ -54,4 +54,8 @@ public class ArticleView {
             System.out.println("===================");
         }
     }
+
+    public void detailBackMessage() {
+        System.out.println("상세보기 화면을 빠져나갑니다.");
+    }
 }
